@@ -53,5 +53,13 @@
       </section>
       <button type="submit">제출</button>
     </form>
+    <script>
+      document
+        .querySelector(".wrapper")
+        .addEventListener("submit", function () {
+          alert("제출 완료!");
+          window.location.reload();
+        });
+    </script>
   </body>
 </html>
