@@ -1,4 +1,0 @@
-@use "@fontsource/source-sans-pro/scss/mixins" as SourceSansPro;
-
-// https://fontsource.org/docs/sass/mixins#fontface-mixin-inputs
-@include SourceSansPro.fontFace($fontDir: "~@fontsource/source-sans-pro/files");
