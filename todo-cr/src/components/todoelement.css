@@ -1,0 +1,14 @@
+.todoElement {
+  cursor: pointer;
+  background-color: aliceblue;
+  transition: 0.25s background-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 3rem;
+}
+
+.todoElement:hover {
+  background-color: rgb(203, 205, 207);
+}
