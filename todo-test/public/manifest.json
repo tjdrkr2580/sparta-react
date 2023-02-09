@@ -1,0 +1,55 @@
+{
+  "background_color": "#ffffff",
+  "categories": ["React", "starter", "application"],
+  "description": "React starter application.",
+  "dir": "ltr",
+  "display": "standalone",
+  "iarc_rating_id": "",
+  "icons": [],
+  "lang": "en-US",
+  "name": "React Starter",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://example.com"
+    },
+    {
+      "id": "com.example",
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/us/app/example/id0123456789"
+    }
+  ],
+  "scope": ".",
+  "screenshots": [
+    {
+      "sizes": "512x512",
+      "src": "static/images/icons/manifest-icon-512.png",
+      "type": "image/png"
+    }
+  ],
+  "short_name": "RS",
+  "shortcuts": [
+    {
+      "description": "React starter application.",
+      "icons": [
+        {
+          "purpose": "maskable any",
+          "sizes": "512x512",
+          "src": "static/images/icons/manifest-icon-512.png",
+          "type": "image/png"
+        }
+      ],
+      "name": "React Starter",
+      "short_name": "RS",
+      "url": "/"
+    }
+  ],
+  "start_url": ".",
+  "theme_color": "#ffffff"
+}
