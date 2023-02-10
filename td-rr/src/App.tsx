@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import Header from "./components/Header";
+import Input from "./components/Input";
+import Detail from "./pages/Detail";
+import Home from "./pages/Home";
+import GlobalStyle from "./utils/GlobalStyle";
+
+const RootWrapper = styled.section`
+  max-width: 1200px;
+  max-width: 800px;
+  margin: 0 auto;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RootWrapper>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Header />
+        <Input />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Detail />} />
+        </Routes>
+      </BrowserRouter>
+    </RootWrapper>
   );
 }
 
