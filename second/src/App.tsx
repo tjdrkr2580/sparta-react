@@ -5,6 +5,8 @@ import GlobalStyle from "./utils/GlobalStyle";
 import { AiOutlineRight, AiTwotoneBell } from "react-icons/ai";
 import Input from "./components/Input";
 import Selector from "./components/Selector";
+import FirstModal from "./components/FirstModal";
+import SecondModal from "./components/SecondModal";
 
 const AppWrapper = styled.div`
   h1 {
@@ -39,8 +41,7 @@ const SelectWrapper = styled.section`
   width: 100%;
   height: 21rem;
   flex-direction: column;
-  border: 3px solid rgba(221, 221, 221);
-  .selectors {
+  .layout {
     display: flex;
   }
 `;
@@ -50,17 +51,20 @@ function App() {
     name: "",
     price: 0,
   });
-
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (info.name !== "" && info.price !== 0) {
       alert(`{name : ${info.name}, price : ${info.price}}`);
     } else alert("이름과 가격 모두 입력해주세요.");
   };
+  const [visible1, setVisible1] = useState(false);
+  const [isOpen, setOpen] = useState(true);
   return (
     <>
       <AppWrapper>
         <GlobalStyle />
+        {visible1 && <FirstModal setVisible={setVisible1} />}
+        <SecondModal isOpen={isOpen} setOpen={setOpen} />
         <h1>Button</h1>
         <FlexWrapper>
           <Button
@@ -109,21 +113,26 @@ function App() {
         </InputWrapper>
         <h1>Modal</h1>
         <FlexWrapper>
-          <Button>open modal</Button>
-          <Button tc={"#D63031"} weight="l" color={"#fab1a0"} isType={"fasle"}>
+          <Button onClick={() => setVisible1(true)}>open modal</Button>
+          <Button
+            onClick={() => setOpen(true)}
+            tc={"#D63031"}
+            weight="l"
+            color={"#fab1a0"}
+            isType={"true"}
+          >
             open modal
           </Button>
         </FlexWrapper>
         <SelectWrapper>
           <h1>Select</h1>
-          <section className="selectors">
+          <div className="layout">
             <Selector />
             <Selector type={2} />
-          </section>
+          </div>
         </SelectWrapper>
       </AppWrapper>
     </>
   );
 }
-
 export default App;

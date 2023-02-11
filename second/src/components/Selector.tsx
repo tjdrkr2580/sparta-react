@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const SelectorWrapper = styled.div`
   display: flex;
@@ -28,11 +28,11 @@ const Label = styled.label`
 `;
 const SelectOptions = styled.ul<{ isOpen: boolean }>`
   position: absolute;
+  z-index: 999;
   list-style: none;
-  top: 3rem;
+  top: 5rem;
   left: 0;
   width: 100%;
-  overflow: hidden;
   flex-direction: column;
   height: 90px;
   padding: 0;
@@ -50,7 +50,21 @@ const Option = styled.li`
   }
 `;
 
-const Selector = () => {
+const Wrapper = styled.div<{ type: number }>`
+  position: relative;
+  height: 10rem;
+  ${(props) =>
+    props.type === 1 &&
+    css`
+      overflow: hidden;
+    `}
+`;
+
+interface propType {
+  type: number;
+}
+
+const Selector = ({ type }: propType) => {
   const [currentValue, setCurrentValue] = useState("리액트");
   const handleOnChangeSelectValue = (e: any) => {
     const { innerText } = e.target;
@@ -68,21 +82,22 @@ const Selector = () => {
     };
   }, [isOpen]);
   return (
-    <SelectorWrapper ref={el} onClick={() => setOpen(true)}>
-      <Label>{currentValue}</Label>
-      <SelectOptions isOpen={isOpen}>
-        <Option onClick={handleOnChangeSelectValue}>리액트</Option>
-        <Option onClick={handleOnChangeSelectValue}>2학년</Option>
-        <Option onClick={handleOnChangeSelectValue}>3학년</Option>
-        <Option onClick={handleOnChangeSelectValue}>4학년</Option>
-      </SelectOptions>
-    </SelectorWrapper>
+    <Wrapper type={type}>
+      <SelectorWrapper ref={el} onClick={() => setOpen((prev) => !prev)}>
+        <Label>{currentValue}</Label>
+        <SelectOptions isOpen={isOpen}>
+          <Option onClick={handleOnChangeSelectValue}>리액트</Option>
+          <Option onClick={handleOnChangeSelectValue}>자바</Option>
+          <Option onClick={handleOnChangeSelectValue}>스프링</Option>
+        </SelectOptions>
+      </SelectorWrapper>
+    </Wrapper>
   );
 };
 
 export default Selector;
 
 Selector.defaultProps = {
-  option: ["리액트", "자바", "스프링", "리액트네이티브"],
+  option: ["리액트", "자바", "스프링"],
   type: 1,
 };
