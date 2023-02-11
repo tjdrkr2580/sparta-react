@@ -9,7 +9,7 @@ import GlobalStyle from "./utils/GlobalStyle";
 
 const RootWrapper = styled.section`
   max-width: 1200px;
-  max-width: 800px;
+  min-width: 800px;
   margin: 0 auto;
 `;
 
@@ -19,7 +19,6 @@ function App() {
       <BrowserRouter>
         <GlobalStyle />
         <Header />
-        <Input />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:id" element={<Detail />} />

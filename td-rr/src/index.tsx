@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./utils/redux/modules/todo";
+import store from "./utils/redux/modules/todo";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
