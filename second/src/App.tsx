@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "./components/Button";
 import GlobalStyle from "./utils/GlobalStyle";
@@ -59,12 +59,14 @@ function App() {
   };
   const [visible1, setVisible1] = useState(false);
   const [isOpen, setOpen] = useState(true);
+  const [visible2, setVisible2] = useState(true);
+
   return (
     <>
       <AppWrapper>
         <GlobalStyle />
         {visible1 && <FirstModal setVisible={setVisible1} />}
-        <SecondModal isOpen={isOpen} setOpen={setOpen} />
+        <SecondModal visible={visible2} setVisible={setVisible2} />
         <h1>Button</h1>
         <FlexWrapper>
           <Button
@@ -111,18 +113,8 @@ function App() {
           />
           <Button weight={"s"}>저장</Button>
         </InputWrapper>
-        <h1>Modal</h1>
         <FlexWrapper>
           <Button onClick={() => setVisible1(true)}>open modal</Button>
-          <Button
-            onClick={() => setOpen(true)}
-            tc={"#D63031"}
-            weight="l"
-            color={"#fab1a0"}
-            isType={"true"}
-          >
-            open modal
-          </Button>
         </FlexWrapper>
         <SelectWrapper>
           <h1>Select</h1>
