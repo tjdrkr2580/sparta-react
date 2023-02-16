@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import nextId from "react-id-generator";
 import { addTodo } from "../../../redux/modules/todos.js";
 
 const Form = () => {
   const id = nextId();
-  
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state);
   const [todo, setTodo] = useState({
-    id: 0,
+    id: Date.now(),
     title: "",
     body: "",
     isDone: false,
   });
-  
+
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
     setTodo({ ...todo, [name]: value });
@@ -22,13 +23,14 @@ const Form = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     if (todo.title.trim() === "" || todo.body.trim() === "") return;
-    
+    dispatch(addTodo(todo));
     setTodo({
-      id: 0,
+      id: Date.now(),
       title: "",
       body: "",
       isDone: false,
     });
+    console.log(data);
   };
 
   return (

@@ -48,7 +48,7 @@ const initialState = {
     },
   ],
   todo: {
-    id: "0",
+    id: Date.now(),
     title: "",
     body: "",
     isDone: false,
@@ -60,9 +60,13 @@ const todos = (state = initialState, action) => {
     case ADD_TODO:
       return {
         ...state,
-        todos: [action.payload],
+        todos: [...state.todos, action.payload],
       };
-
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((st) => st.id !== action.payload),
+      };
     case TOGGLE_STATUS_TODO:
       return {
         ...state,
@@ -75,14 +79,6 @@ const todos = (state = initialState, action) => {
           } else {
             return todo;
           }
-        }),
-      };
-
-    case GET_TODO_BY_ID:
-      return {
-        ...state,
-        todo: state.todos.find((todo) => {
-          return todo.id === action.payload;
         }),
       };
     default:
