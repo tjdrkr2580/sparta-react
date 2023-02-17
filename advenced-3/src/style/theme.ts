@@ -1,6 +1,6 @@
 export const theme = {
-  bgColor: "",
-  textColor: "",
-  btnColor: "",
-  primary: "",
+  bgColor: "#fafbff",
+  textColor: "#222222",
+  btnColor: "#A084DC",
+  primary: "#645CBB",
 };

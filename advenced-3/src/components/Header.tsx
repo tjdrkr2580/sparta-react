@@ -24,8 +24,9 @@ const LinkWrapper = styled.section`
 `;
 
 const CustomLink = styled(Link)`
+  font-weight: 500;
   font-size: 2rem;
-  color: black;
+  color: ${(props) => props.theme.textColor};
   &:hover {
     letter-spacing: 0.12rem;
   }
