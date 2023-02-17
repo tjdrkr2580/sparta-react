@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch, __getTodos } from "./todoSlice";
-import { stateType } from "./type";
 
 function App() {
   const dispatch = useAppDispatch();
