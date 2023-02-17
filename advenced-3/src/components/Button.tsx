@@ -42,7 +42,11 @@ const CustomButton = styled.button<{ size: string }>`
 `;
 
 const Button = ({ children, ...props }: ButtonProps) => {
-  return <CustomButton size={props.size}>{children}</CustomButton>;
+  return (
+    <CustomButton size={props.size} onClick={props.onClick}>
+      {children}
+    </CustomButton>
+  );
 };
 
 export default Button;

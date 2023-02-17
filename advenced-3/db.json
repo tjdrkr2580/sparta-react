@@ -1,4 +1,30 @@
 {
-  "diarys": [],
-  "comments": []
+  "diarys": [
+    {
+      "id": 1,
+      "user": "hanson",
+      "title": "오늘 하루",
+      "contents": "오늘 하루는 매우 보람찬 하루였다."
+    },
+    {
+      "id": 2,
+      "user": "hansoㅂㅈㄷㅂㅈㄷn",
+      "title": "오늘 하루",
+      "contents": "오늘 하루는 매우 보람찬 하루였다."
+    },
+    {
+      "id": 3,
+      "user": "dsadasdsa",
+      "title": "오늘 하루",
+      "contents": "오늘 하루는 매우 보람찬 하루였다."
+    }
+  ],
+  "comments": [
+    {
+      "id": "number",
+      "postId": "1",
+      "user": "qwer1234",
+      "comment": "잘 읽고 가요"
+    }
+  ]
 }

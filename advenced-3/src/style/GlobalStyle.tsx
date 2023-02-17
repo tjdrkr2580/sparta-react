@@ -10,7 +10,10 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     transition: 0.25s filter, 0.25s letter-spacing, 0.25s transform;
+    cursor: none;
  }
+
+
 `;
 
 export default GlobalStyle;
