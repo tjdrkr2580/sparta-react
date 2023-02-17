@@ -28,7 +28,7 @@ export const __getTodos = createAsyncThunk<stateType>(
 );
 
 const todoSlice = createSlice({
-  name: "todos",
+  name: "td",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -37,9 +37,9 @@ const todoSlice = createSlice({
         state.isLoading = true;
         state.isError = false;
       })
-      .addCase(__getTodos.fulfilled, (state: stateType) => {
+      .addCase(__getTodos.fulfilled, (state: any, action) => {
         state.isLoading = false;
-        state.isError = false;
+        state.todos = action.payload;
       })
       .addCase(__getTodos.rejected, (state: stateType, action) => {
         state.isError = true;
