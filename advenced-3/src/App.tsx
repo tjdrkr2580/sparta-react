@@ -6,17 +6,19 @@ import Home from "./pages/Home";
 import GlobalStyle from "./style/GlobalStyle";
 import AnimatedCursor from "react-animated-cursor";
 import Edit from "./components/Edit";
+import { useState } from "react";
 
 function App() {
+  const [visible, setVisible] = useState(false);
   return (
     <BrowserRouter>
-      <Edit />
+      {visible === true && <Edit setVisible={setVisible} />}
       <AnimatedCursor color="100, 92, 187" innerSize={10} outerSize={10} />
       <GlobalStyle />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/diary" element={<Diary />} />
+        <Route path="/diary" element={<Diary setVisible={setVisible} />} />
         <Route path="/diary/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>

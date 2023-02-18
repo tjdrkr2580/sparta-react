@@ -1,11 +1,6 @@
 import { ChangeEvent } from "react";
 import styled, { css } from "styled-components";
-
-interface inputProps {
-  wh: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder: string;
-}
+import { inputProps } from "../types/type";
 
 const CustomInput = styled.input<inputProps>`
   border-radius: 1rem;
@@ -44,6 +39,7 @@ const Input = ({ ...props }: inputProps) => {
       wh={props.wh}
       onChange={props.onChange}
       placeholder={props.placeholder}
+      value={props.value}
     />
   );
 };
@@ -54,4 +50,5 @@ Input.defaultProps = {
   wh: "m",
   onChange: (e: ChangeEvent<HTMLInputElement>) => {},
   placeholder: "input...",
+  value: "",
 };

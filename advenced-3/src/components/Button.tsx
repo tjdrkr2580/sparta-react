@@ -1,12 +1,7 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import { boxShadow, flexCenter } from "../style/mixin";
-
-interface ButtonProps {
-  children: ReactNode;
-  size: string;
-  onClick: () => void;
-}
+import { ButtonProps } from "../types/type";
 
 const CustomButton = styled.button<{ size: string }>`
   ${flexCenter}

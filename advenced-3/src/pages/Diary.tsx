@@ -65,7 +65,7 @@ const DiaryList = styled.li`
   border-radius: 1rem;
 `;
 
-const Diary = () => {
+const Diary = ({ setVisible }: any) => {
   const diaryPatch = async () => {
     const res = await cuxios.get("/diarys");
     return res.data;
@@ -76,7 +76,9 @@ const Diary = () => {
       <DiaryLayout>
         <DiaryList>
           <p>당신의 오늘을 한 줄로 표현해주세요.</p>
-          <Button size="s">추가하기</Button>
+          <Button size="s" onClick={() => setVisible(true)}>
+            추가하기
+          </Button>
         </DiaryList>
         <DiaryLists>
           {!isLoading &&

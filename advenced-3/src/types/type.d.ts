@@ -11,3 +11,16 @@ export type commentType = {
   user: string;
   comment: string;
 };
+
+interface ButtonProps {
+  children: ReactNode;
+  size: string;
+  onClick: () => void;
+}
+
+interface inputProps {
+  wh: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder: string;
+  value: string;
+}
