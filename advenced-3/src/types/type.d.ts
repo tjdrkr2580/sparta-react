@@ -24,3 +24,7 @@ interface inputProps {
   placeholder: string;
   value: string;
 }
+
+interface commentProps {
+  id: string | undefined;
+}

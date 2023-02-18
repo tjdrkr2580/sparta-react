@@ -32,13 +32,8 @@ const DiaryLists = styled.ul`
   gap: 0.8rem;
 `;
 
-const CustomLink = styled(Link)`
-  width: 100%;
-  height: 100%;
-  color: ${(props) => props.theme.textColor};
-`;
-
 const DiaryList = styled.li`
+  padding: 0 0.8rem;
   background-color: white;
   transition: background-color 0.25s;
   &:hover {
@@ -70,6 +65,10 @@ const Diary = ({ setVisible }: any) => {
     const res = await cuxios.get("/diarys");
     return res.data;
   };
+  const onDelete = async (id: number) => {
+    await cuxios.delete(`/diarys/${id}`);
+    window.location.reload();
+  };
   const { isLoading, data } = useQuery("diarys", diaryPatch);
   return (
     <DiaryWrapper>
@@ -82,14 +81,18 @@ const Diary = ({ setVisible }: any) => {
         </DiaryList>
         <DiaryLists>
           {!isLoading &&
+            data &&
             data.map((diary: diaryType) => (
-              <CustomLink to={`/diary/${data.id}`} key={data.id}>
-                <DiaryList>
-                  <h1>{diary.title}</h1>
-                  <span>{diary.user}</span>
-                  <Button size="s">삭제</Button>
-                </DiaryList>
-              </CustomLink>
+              <DiaryList key={diary.id}>
+                <h1>{diary.title}</h1>
+                <span>{diary.user}</span>
+                <Link to={`/diary/${diary.id}`}>
+                  <Button size="s">상세보기</Button>
+                </Link>
+                <Button size="s" onClick={() => onDelete(diary.id)}>
+                  삭제
+                </Button>
+              </DiaryList>
             ))}
         </DiaryLists>
       </DiaryLayout>

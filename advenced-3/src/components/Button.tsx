@@ -5,6 +5,7 @@ import { ButtonProps } from "../types/type";
 
 const CustomButton = styled.button<{ size: string }>`
   ${flexCenter}
+  z-index: 998;
   cursor: pointer;
   background-color: ${(props) => props.theme.btnColor};
   border-radius: 1rem;

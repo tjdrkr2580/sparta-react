@@ -1,36 +1,30 @@
 {
   "diarys": [
     {
-      "id": 1,
-      "user": "hanson",
-      "title": "오늘 하루",
-      "contents": "오늘 하루는 매우 보람찬 하루였다."
-    },
-    {
-      "id": 2,
-      "user": "hansoㅂㅈㄷㅂㅈㄷn",
-      "title": "오늘 하루",
-      "contents": "오늘 하루는 매우 보람찬 하루였다."
-    },
-    {
-      "id": 3,
-      "user": "dsadasdsa",
-      "title": "오늘 하루",
-      "contents": "오늘 하루는 매우 보람찬 하루였다."
-    },
-    {
       "id": 1676700827212,
       "user": "ㄱㅇㅁㅈㅇ",
       "title": "ㅇㅁㅈㅇㅁㅈdwdawdawda",
       "content": "ㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇdaw"
+    },
+    {
+      "id": 1676705087649,
+      "user": "에담스",
+      "title": "ㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈ",
+      "content": "ㅇㅁㅈㅇㅁㅈㅇㅈㅁ"
     }
   ],
   "comments": [
     {
-      "id": "number",
+      "id": 1676704920501,
+      "postId": "2",
+      "user": "ㅇㅁㅈㅇㅁㅈ",
+      "comment": "ㅇㅁㅈㅇㅁㅈ"
+    },
+    {
+      "id": 1676708458091,
       "postId": "1",
-      "user": "qwer1234",
-      "comment": "잘 읽고 가요"
+      "user": "vvcv",
+      "comment": "cvvc"
     }
   ]
 }
