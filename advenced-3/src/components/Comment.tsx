@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
 import { flexCenter } from "../style/mixin";
-import { commentProps } from "../types/type";
+import { commentProps, commentType } from "../types/type";
 import { cuxios } from "../utils/cuxios";
 import Button from "./Button";
 import Input from "./Input";
@@ -11,13 +11,12 @@ const CommentWrapper = styled.section`
   display: flex;
   ${flexCenter}
   width: 100vw;
-  margin-top: 1rem;
+  margin-top: 10rem;
   flex-direction: column;
 `;
 
 const CommentForm = styled.form`
   display: flex;
-  gap: 1rem;
   align-items: center;
 `;
 
@@ -27,7 +26,7 @@ const CommentLists = styled.ul`
   gap: 0.8rem;
   align-items: center;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 2rem;
 `;
 
 const CommentList = styled.ul`
@@ -63,6 +62,7 @@ const Comment = ({ id }: commentProps) => {
     await cuxios.delete(`/comments/${id}`);
     window.location.reload();
   };
+
   const { isLoading } = useQuery("comments", commentPatch);
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -100,6 +100,7 @@ const Comment = ({ id }: commentProps) => {
             <CommentList key={data.id}>
               <h1>{data.user}</h1>
               <p>{data.comment}</p>
+
               <Button size="s" onClick={() => onDelete(data.id)}>
                 삭제
               </Button>

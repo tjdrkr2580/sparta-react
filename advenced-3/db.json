@@ -4,7 +4,7 @@
       "id": 1676700827212,
       "user": "ㄱㅇㅁㅈㅇ",
       "title": "ㅇㅁㅈㅇㅁㅈdwdawdawda",
-      "content": "ㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇㅁㅈㅇdaw"
+      "content": "어제 먹은 밥이 먹고싶다."
     },
     {
       "id": 1676705087649,
@@ -25,6 +25,12 @@
       "postId": "1",
       "user": "vvcv",
       "comment": "cvvc"
+    },
+    {
+      "id": 1676708788950,
+      "postId": "1676700827212",
+      "user": "dddwad",
+      "comment": "dawdaw"
     }
   ]
 }
