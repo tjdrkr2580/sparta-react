@@ -5,10 +5,12 @@ import Diary from "./pages/Diary";
 import Home from "./pages/Home";
 import GlobalStyle from "./style/GlobalStyle";
 import AnimatedCursor from "react-animated-cursor";
+import Edit from "./components/Edit";
 
 function App() {
   return (
     <BrowserRouter>
+      <Edit />
       <AnimatedCursor color="100, 92, 187" innerSize={10} outerSize={10} />
       <GlobalStyle />
       <Header />

@@ -40,8 +40,9 @@ const CustomLink = styled(Link)`
 
 const DiaryList = styled.li`
   background-color: white;
+  transition: background-color 0.25s;
   &:hover {
-    filter: brightness(70%);
+    background-color: #c4c1c1;
   }
   display: flex;
   justify-content: space-around;
@@ -61,6 +62,7 @@ const DiaryList = styled.li`
   section {
   }
   align-items: center;
+  border-radius: 1rem;
 `;
 
 const Diary = () => {
@@ -77,7 +79,7 @@ const Diary = () => {
           <Button size="s">추가하기</Button>
         </DiaryList>
         <DiaryLists>
-          {data &&
+          {!isLoading &&
             data.map((diary: diaryType) => (
               <CustomLink to={`/diary/${data.id}`} key={data.id}>
                 <DiaryList>

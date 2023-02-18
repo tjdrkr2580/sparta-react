@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import AnimatedComponents from "../components/AnimatedComponents";
 import Button from "../components/Button";
+import useNavi from "../utils/useNavi";
 
 const blurAnimation = keyframes`
   0% {
@@ -28,11 +30,14 @@ const HomeWrapper = styled.main`
 `;
 
 const Home = () => {
+  const setPage = useNavi();
   return (
     <AnimatedComponents>
       <HomeWrapper>
         <p>당신의 오늘의 한 줄을 기록해주세요.</p>
-        <Button size="l">시작하기</Button>
+        <Button size="l" onClick={() => setPage("/diary")}>
+          시작하기
+        </Button>
       </HomeWrapper>
     </AnimatedComponents>
   );
