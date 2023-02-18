@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
 import { flexCenter } from "../style/mixin";
-import { commentProps, commentType } from "../types/type";
+import { commentProps } from "../types/type";
 import { cuxios } from "../utils/cuxios";
 import Button from "./Button";
 import Input from "./Input";
